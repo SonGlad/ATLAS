@@ -1,22 +1,45 @@
-import { SharedLayout } from "./components/SharedLayout";
-import { Route, Routes, Navigate} from "react-router-dom";
-import { lazy } from "react";
-// import { lazy, useEffect } from "react";
-// import { useDispatch} from "react-redux";
-// import { PrivateRoute } from "./PrivateRoute";
-// import { RestrictedRoute } from "./RestrictedRoute";
+import {Container} from "./components/Container/Container";
+import {Section} from "./components/Section/Section";
+import { Header } from "./components/Header/Header";
+import { Hero } from "./components/HeroSection/HeroSection";
+import { About } from "./components/AboutSection/AboutSection";
+import { Locations } from "./components/LocationsSection/LocationSection";
+import { Equipment } from "./components/EquipmentSection/EquipmentSection";
+import { Contacts } from "./components/ContactsSection/ContactSection";
+import { Footer } from "./components/Footer/Footer";
 
-const HomePage = lazy(() => import('./pages/Home'));
+
 
 export const App= () => {
   return (
     <>
-      <Routes>
-        <Route path='/' element = {<SharedLayout/>}>
-          <Route index element={<HomePage/>}/>
-          <Route path='*' element={<Navigate to ='/'/>}/>
-        </Route>    
-      </Routes>
+      <Header/>
+      <Section>
+        <Container>
+          <Hero/>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <About/>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <Locations/>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <Equipment/>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <Contacts/>
+        </Container>
+      </Section>
+      <Footer/>
     </>
   );
 };

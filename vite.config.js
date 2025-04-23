@@ -15,7 +15,7 @@ export default defineConfig({
       include: "**/*.svg",
     }),
   ],
-  base: '/react-vite-template/',
+  base: '/ATLAS/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
