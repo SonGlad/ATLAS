@@ -17,6 +17,7 @@ export default defineConfig({
   ],
   base: '/ATLAS/',
   resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
