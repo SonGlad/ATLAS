@@ -1,5 +1,5 @@
 import RingLoader from "react-spinners/RingLoader";
-import {RingLoaderStyled } from "./CustomLoaders.styled";
+import { RingLoaderStyled } from "./CustomLoaders.styled";
 
 
 
