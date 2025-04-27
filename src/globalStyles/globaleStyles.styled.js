@@ -5,35 +5,36 @@ export const GlobalStyle = createGlobalStyle`
    
     html,
     body {
-    height: 100%;
-    font-family: 'Poppins', sans-serif; 
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    color: #000;
-    background-color: #fff;
-    /* color: ${(props) => props.theme.color.primary_white};
-    background-color: ${(props) => props.theme.color.primary_black}; */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+        height: 100%;
+        font-family: 'Rubik', "Raleway", "Italiana", sans-serif; 
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        color: ${(props) => props.theme.color.black};
+        background-color: ${(props) => props.theme.color.white};
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body.no-scroll {
+        overflow: hidden;
     }
     
-
     a {
-    text-decoration: none;
-    color: inherit;
+        text-decoration: none;
+        color: inherit;
     }
 
     ul,
     ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
 
     img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+        display: block;
+        max-width: 100%;
+        height: auto;
     }
 
     h1, 
@@ -43,10 +44,18 @@ export const GlobalStyle = createGlobalStyle`
     h5, 
     h6, 
     p {
-    margin: 0;
+        margin: 0;
     }
 
     *{
-    box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        cursor: pointer;
     }
 `;

@@ -1,0 +1,38 @@
+{
+    "header":{
+        "about": "ABOUT US",
+        "location": "LOCATIONS",
+        "equipment": "EQUIPMENT",
+        "contacts": "CONTACTS",
+        "contactUsText": "Contact us",
+        "contactUsNumber": "+40743376845",
+        "contactNumberText": "+40743376845"
+    },
+    "hero":{
+        "name": "ATLAS PHOTO STUDIO",
+        "slogan":"A space where creativity, light, and style come together to create perfect shots.",
+        "order": "BOOK NOW"
+    },
+    "about":{
+        "title": "ABOUT US",
+        "textOne": "I dreamed of creating a space where creativity meets professionalism. That’s how Atlas was born—a studio where light, style, and atmosphere shape the perfect shot. We help craft unique images, from brand content to personal photoshoots. Atlas is more than a studio—it’s where art comes to life.",
+        "founder": "Daria Morozova-founder"
+    },
+    "locations":{
+        "loaction1": "STONE WALL",
+        "location2": "ANOTHER DREAM"
+    },
+    "equipment":{
+        "title": "EQUIPMEMT"
+    },
+    "contacts":{
+        "working": "Opening hours",
+        "adress": "Adress"
+    },
+    "footer":{
+        "about": "ABOUT US",
+        "location": "LOCATIONS",
+        "equipment": "EQUIPMENT",
+        "contacts": "CONTACTS"
+    }
+}

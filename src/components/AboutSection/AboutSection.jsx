@@ -1,11 +1,11 @@
 import { StyledAbout } from "./AboutSection.styled";
 
 
-export const About = () => {
+export const About = ({propsId}) => {
 
 
     return (
-        <StyledAbout>
+        <StyledAbout id={propsId}>
             <h2>ITS AN ABOUT SECTION</h2>
         </StyledAbout>
     )

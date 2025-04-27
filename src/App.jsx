@@ -14,32 +14,32 @@ export const App= () => {
   return (
     <>
       <Header/>
-      <Section>
+      {/* <Section>
         <Container>
-          <Hero/>
+          <Hero propsId={'HeroSection'}/>
         </Container>
       </Section>
       <Section>
         <Container>
-          <About/>
+          <About propsId={'AboutSection'}/>
         </Container>
       </Section>
       <Section>
         <Container>
-          <Locations/>
+          <Locations propsId={'LocationSection'}/>
         </Container>
       </Section>
       <Section>
         <Container>
-          <Equipment/>
+          <Equipment propsId={'EquipmentSection'}/>
         </Container>
       </Section>
       <Section>
         <Container>
-          <Contacts/>
+          <Contacts propsId={'ContactsSection'}/>
         </Container>
       </Section>
-      <Footer/>
+      <Footer/> */}
     </>
   );
 };

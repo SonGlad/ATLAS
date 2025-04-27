@@ -3,7 +3,7 @@ import { RingLoaderStyled } from "./CustomLoaders.styled";
 
 
 
-export const Loading = () => {
+export const Loader = () => {
     return (
         <RingLoaderStyled>
             <RingLoader 

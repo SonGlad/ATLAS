@@ -1,11 +1,11 @@
 import { StyledHero } from "./HeroSection.styled";
 
 
-export const Hero = () => {
+export const Hero = ({propsId}) => {
 
 
     return (
-        <StyledHero>
+        <StyledHero id={propsId}>
             <h2>ITS A HERO SECTION</h2>
         </StyledHero>
     )
