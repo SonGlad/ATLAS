@@ -1,6 +1,6 @@
 export const theme = {
     color: {
-        hover_grey: ' #4c4c4c',
+        hover_grey: ' #877356',
         blackColor: ' #142515',
         background: '#fcfff9',
         black: '#000000',

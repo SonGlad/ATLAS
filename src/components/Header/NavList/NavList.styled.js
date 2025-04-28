@@ -76,7 +76,6 @@ export const StyledNavigation = styled.nav`
 
         &:hover .mob-logo-item .header-logo{
             fill: ${p => p.theme.color.hover_grey};
-            transition: fill ${p => p.theme.transition.main_transition};
         }
     }
 

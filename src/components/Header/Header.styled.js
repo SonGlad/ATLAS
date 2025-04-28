@@ -6,6 +6,11 @@ export const StyledHeader = styled.header `
     position: fixed;
     background-color: ${p => p.theme.color.white};
     width: 100%;
+    z-index: 100;
+
+    @media screen and (min-width: 768px){
+        padding-top: 32px;
+    }
 
     .header-mobile{
         width: 100%;
@@ -34,12 +39,12 @@ export const StyledHeader = styled.header `
         border-radius: 5px;
         border: 1px solid ${p => p.theme.color.black};
         padding: 5px;
+        transition: color ${p => p.theme.transition.main_transition},
+                    background-color ${p => p.theme.transition.main_transition};
 
         &:hover{
             color: ${p => p.theme.color.white};
             background-color: ${(props) => props.theme.color.hover_grey};
-            transition: color ${p => p.theme.transition.main_transition},
-                        background-color ${p => p.theme.transition.main_transition};
         }
     }
 
@@ -63,7 +68,8 @@ export const StyledHeader = styled.header `
         background-color: pink;
         background-color: ${(props) => props.theme.color.white};
         color: ${(p) => p.theme.color.black};
-        transition: background-color ${(p) => p.theme.transition.main_transition};
+        transition: background-color ${(p) => p.theme.transition.main_transition},
+                    color ${p => p.theme.transition.main_transition};
         border-top: 1px solid ${(p) => p.theme.color.black};
 
         cursor: pointer;
@@ -71,8 +77,6 @@ export const StyledHeader = styled.header `
         &:hover{
             color: ${p => p.theme.color.white};
             background-color: ${(props) => props.theme.color.hover_grey};
-            transition: color ${p => p.theme.transition.main_transition},
-                        background-color ${p => p.theme.transition.main_transition};
         }
 
         &:first-child{
@@ -88,6 +92,8 @@ export const StyledHeader = styled.header `
         width: 65px;
         height: 30px;
         fill: ${p => p.theme.color.black};
+        transition: fill ${p => p.theme.transition.main_transition};
+
 
         @media screen and (min-width: 768px){
             width: calc(80px + (20 * ((100vw - 768px) / 672)));

@@ -7,16 +7,31 @@ import { Locations } from "./components/LocationsSection/LocationSection";
 import { Equipment } from "./components/EquipmentSection/EquipmentSection";
 import { Contacts } from "./components/ContactsSection/ContactSection";
 import { Footer } from "./components/Footer/Footer";
+import { Modal } from "./components/Modal/Modal";
+import { useState } from "react";
 
 
 
 export const App= () => {
+  const [isModal, setModal] = useState(false);
+
+  const openModal = () => {
+    setModal(true)
+  };
+
+  const closeModal = () => {
+    setModal(false);
+  }
+
   return (
     <>
       <Header/>
-      {/* <Section>
+      <Section>
         <Container>
-          <Hero propsId={'HeroSection'}/>
+          <Hero 
+            propsId={'HeroSection'}
+            openModal={openModal}
+          />
         </Container>
       </Section>
       <Section>
@@ -24,22 +39,28 @@ export const App= () => {
           <About propsId={'AboutSection'}/>
         </Container>
       </Section>
-      <Section>
+      {/* <Section>
         <Container>
           <Locations propsId={'LocationSection'}/>
         </Container>
-      </Section>
-      <Section>
+      </Section> */}
+      {/* <Section>
         <Container>
           <Equipment propsId={'EquipmentSection'}/>
         </Container>
-      </Section>
-      <Section>
+      </Section> */}
+      {/* <Section>
         <Container>
           <Contacts propsId={'ContactsSection'}/>
         </Container>
-      </Section>
-      <Footer/> */}
+      </Section> */}
+      {/* <Footer/> */}
+      {isModal && (
+        <Modal
+          isModal={isModal}
+          closeModal={closeModal}
+        />
+      )}
     </>
   );
 };
