@@ -10,12 +10,12 @@
     },
     "hero":{
         "name": "ATLAS PHOTO STUDIO",
-        "slogan":"A space where creativity, light, and style come together to create perfect shots.",
+        "slogan":"a space where creativity, light, and style come together to create perfect shots.",
         "order": "BOOK NOW"
     },
     "about":{
         "title": "ABOUT US",
-        "textOne": "I dreamed of creating a space where creativity meets professionalism. That’s how Atlas was born—a studio where light, style, and atmosphere shape the perfect shot. We help craft unique images, from brand content to personal photoshoots. Atlas is more than a studio—it’s where art comes to life.",
+        "textOne": "i dreamed of creating a space where creativity meets professionalism. That’s how Atlas was born—a studio where light, style, and atmosphere shape the perfect shot. We help craft unique images, from brand content to personal photoshoots. Atlas is more than a studio—it’s where art comes to life.",
         "founder": "Daria Morozova-founder"
     },
     "locations":{
