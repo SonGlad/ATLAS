@@ -84,7 +84,7 @@ export const StyledHero = styled.div`
         margin-bottom: 32px;
 
         @media screen and (min-width: 768px){
-            font-size: min(calc(48px + (44 * ((100vw - 768px) / 672))), 200px);
+            font-size: min(calc(48px + (43 * ((100vw - 768px) / 672))), 200px);
         }
     }
 

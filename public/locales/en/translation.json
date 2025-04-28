@@ -6,7 +6,10 @@
         "contacts": "CONTACTS",
         "contactUsText": "Contact us",
         "contactUsNumber": "+40743376845",
-        "contactNumberText": "+40743376845"
+        "contactNumberText": "+40743376845",
+        "telegramLink": "https://t.me/Marachk",
+        "instagramLink": "",
+        "modalText": "Book now through"
     },
     "hero":{
         "name": "ATLAS PHOTO STUDIO",
@@ -19,13 +22,15 @@
         "founder": "Daria Morozova-founder"
     },
     "locations":{
-        "loaction1": "STONE WALL",
+        "title": "LOCATIONS",
+        "location1": "STONE WALL",
         "location2": "ANOTHER DREAM"
     },
     "equipment":{
         "title": "EQUIPMEMT"
     },
     "contacts":{
+        "title": "CONTACTS",
         "working": "Opening hours",
         "adress": "Adress"
     },

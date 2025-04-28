@@ -39,16 +39,16 @@ export const App= () => {
           <About propsId={'AboutSection'}/>
         </Container>
       </Section>
-      {/* <Section>
+      <Section>
         <Container>
           <Locations propsId={'LocationSection'}/>
         </Container>
-      </Section> */}
-      {/* <Section>
+      </Section>
+      <Section>
         <Container>
           <Equipment propsId={'EquipmentSection'}/>
         </Container>
-      </Section> */}
+      </Section>
       {/* <Section>
         <Container>
           <Contacts propsId={'ContactsSection'}/>

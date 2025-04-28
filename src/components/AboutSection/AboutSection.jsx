@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import useWindowSize from "../../custom-hooks/hooks";
 import AboutImageMob from "../../assets/images/author-img-mob.webp";
 import AboutImagePc from "../../assets/images/author-img-pc.webp";
+import { SectionTitle } from "../SectionTitle/SectionTitle";
 
 
 
@@ -15,12 +16,9 @@ export const About = ({propsId}) => {
 
     return (
         <StyledAbout id={propsId}>
-            <div className="about-title-cont">
-                <h2 className="section-title">
-                    {t('about.title')}
-                </h2>
-                <span className="title-undescore"/>
-            </div>
+            <SectionTitle
+                title={t('about.title')}
+            />
             <div className="about-content-block">
                 <div className="about-image-cont">
                     {renderMob ? (

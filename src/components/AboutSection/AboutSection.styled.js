@@ -2,43 +2,6 @@ import styled from "styled-components";
 
 
 export const StyledAbout = styled.div`
-    
-
-    .about-title-cont{
-        padding-top: 80px;
-        display: flex;
-        margin-bottom: 48px;
-
-
-        @media screen and (min-width: 768px){
-            padding-top: calc(80px + (40 * ((100vw - 768px) / 672)));
-            margin-bottom: calc(48px + (16 * ((100vw - 768px) / 672)));
-        }
-
-        & .section-title{
-            font-family: "Italiana", sans-serif; 
-            font-weight: 400;
-            font-size: 40px;
-            color: ${p => p.theme.color.black};
-            white-space: nowrap;
-
-            @media screen and (min-width: 768px){
-                font-size: calc(32px + (32 * ((100vw - 768px) / 672)));
-            }
-        }
-
-        .title-undescore{
-            border-bottom: 1px solid ${p => p.theme.color.black};
-            width: 100%;
-            margin-right: -16px;
-
-            @media screen and (min-width: 768px){
-                margin-right: calc(-40px + (-40 * ((100vw - 768px) / 672)));
-            }
-        }
-    }
-
-
 
 
     .about-content-block{

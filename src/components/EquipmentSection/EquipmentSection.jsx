@@ -1,12 +1,19 @@
 import { StyledEquipment } from "./EquipmentSection.styled";
+import { SectionTitle } from "../SectionTitle/SectionTitle";
+import { useTranslation } from 'react-i18next';
+
 
 
 export const Equipment = ({propsId}) => {
+    const { t } = useTranslation();
+
     
     
     return (
         <StyledEquipment id={propsId}>
-            <h2>ITS AN EQUIPMET SECTION</h2>
+            <SectionTitle
+                title={t('equipment.title')}
+            />
         </StyledEquipment>
     )
 };

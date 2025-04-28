@@ -6,7 +6,10 @@
         "contacts": "КОНТАКТЫ",
         "contactUsText": "Связаться с нами",
         "contactUsNumber": "+40743376845",
-        "contactNumberText": "+40743376845"
+        "contactNumberText": "+40743376845",
+        "telegramLink": "@Marachk",
+        "instagramLink": "",
+        "modalText": "Забронируйте сейчас через"
     },
     "hero": {
         "name": "ATLAS PHOTO STUDIO",
@@ -19,13 +22,15 @@
         "founder": "Дарья Морозова — основатель"
     },
     "locations": {
-        "loaction1": "КАМЕННАЯ СТЕНА",
+        "title": "ЛОКАЦИИ",
+        "location1": "КАМЕННАЯ СТЕНА",
         "location2": "ДРУГАЯ МЕЧТА"
     },
     "equipment": {
         "title": "ОБОРУДОВАНИЕ"
     },
     "contacts": {
+        "title": "КОНТАКТЫ",
         "working": "Часы работы",
         "adress": "Адрес"
     },
