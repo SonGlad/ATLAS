@@ -6,7 +6,10 @@
         "contacts": "CONTACTE",
         "contactUsText": "Contactează-ne",
         "contactUsNumber": "+40743376845",
-        "contactNumberText": "+40743376845"
+        "contactNumberText": "+40743376845",
+        "telegramLink": "@Marachk",
+        "instagramLink": "",
+        "modalText": "Rezervați acum prin"
     },
     "hero": {
         "name": "ATLAS PHOTO STUDIO",
@@ -19,13 +22,15 @@
         "founder": "Daria Morozova — fondatoare"
     },
     "locations": {
-        "loaction1": "PERETE DE PIATRĂ",
+        "title": "LOCAȚII",
+        "location1": "PERETE DE PIATRĂ",
         "location2": "UN ALT VIS"
     },
     "equipment": {
         "title": "ECHIPAMENT"
     },
     "contacts": {
+        "title": "CONTACTE",
         "working": "Program",
         "adress": "Adresă"
     },
