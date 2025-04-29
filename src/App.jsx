@@ -49,12 +49,12 @@ export const App= () => {
           <Equipment propsId={'EquipmentSection'}/>
         </Container>
       </Section>
-      {/* <Section>
+      <Section>
         <Container>
           <Contacts propsId={'ContactsSection'}/>
         </Container>
-      </Section> */}
-      {/* <Footer/> */}
+      </Section>
+      <Footer/>
       {isModal && (
         <Modal
           isModal={isModal}

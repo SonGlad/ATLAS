@@ -103,5 +103,5 @@ export const ModalStyled = styled.div`
                 margin-bottom: 0;
             }
         }
-        }
+    }
 `
