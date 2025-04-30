@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const StyledContacts = styled.div`
     display: flex;
     flex-direction: column;
-
+ 
     @media screen and (min-width: 768px){
         display: block;
     }
@@ -20,7 +20,8 @@ export const StyledContacts = styled.div`
 
 
         & .google-map-cont{
-            width: 370px;
+            width: calc(318px + (54 * ((100vw - 350px) / 52)));
+            max-width: 370px;
             aspect-ratio: 1.135;
             border-radius: 5px;
             border: 1px solid black;

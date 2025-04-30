@@ -81,11 +81,15 @@ export const StyledFooter = styled.footer`
         gap: 14px;
         font-family: "Raleway", sans-serif;
         font-weight: 400;
-        font-size: 15px;
+        font-size: calc(12px + (2 * ((100vw - 350px) / 52)));
+
+        @media screen and (min-width: 450px){
+            font-size: 15px;
+        }
 
         @media screen and (min-width: 768px){
             gap: 18px;
-            font-size: calc(15px + (5 * ((100vw - 768px) / 672)));
+            font-size: calc(15px + (6 * ((100vw - 768px) / 672)));
         }
     }
 

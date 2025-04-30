@@ -6,8 +6,8 @@ export const ContainersStyle = styled.div`
   margin: 0 auto;
   padding: 0 16px;
 
-  /* outline: 2px solid red;
-  outline-offset: -2px; */
+  outline: 2px solid red;
+  outline-offset: -2px;
 
   @media screen and (min-width: 768px) {
     padding-left: calc(40px + (40 * ((100vw - 768px) / 672)));
