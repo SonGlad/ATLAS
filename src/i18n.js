@@ -13,7 +13,7 @@ i18next
         default: 'ro',
         debug: true,
         defaultNS: 'translation',
-        fallbackLng: 'ro',
+        fallbackLng: 'en',
         // lng: 'ro',
         backend: {
             loadPath: '/ATLAS/locales/{{lng}}/translation.json'

@@ -12,8 +12,8 @@ import Equipment1Pc from "../../assets/images/equipment1-pc.webp";
 import Equipment2Pc from "../../assets/images/equipment2-pc.webp";
 import Equipment3Pc from "../../assets/images/equipment3-pc.webp";
 import Equipment4Pc from "../../assets/images/equipment4-pc.webp";
-import Equipment5Pc from "../../assets/images/equipment5-pc.jpg";
-import Equipment6Pc from "../../assets/images/equipment6-pc.jpg";
+import Equipment5Pc from "../../assets/images/equipment5-pc.webp";
+import Equipment6Pc from "../../assets/images/equipment6-pc.webp";
 
 
 
@@ -22,19 +22,16 @@ const equipmentData = [
         equipment1Pc: Equipment1Pc,
         equipment2Mob: Equipment2Mob,
         equipment2Pc: Equipment2Pc
-
     },
     {equipment1Mob: Equipment3Mob,
         equipment1Pc: Equipment3Pc,
         equipment2Mob: Equipment4Mob,
         equipment2Pc: Equipment4Pc
-
     },
     {equipment1Mob: Equipment5Mob,
         equipment1Pc: Equipment5Pc,
         equipment2Mob: Equipment6Mob,
         equipment2Pc: Equipment6Pc
-
     }
 ]
 
