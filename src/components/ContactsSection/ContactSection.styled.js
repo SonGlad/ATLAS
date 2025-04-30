@@ -30,6 +30,7 @@ export const StyledContacts = styled.div`
 
             @media screen and (min-width: 768px){
                 margin-bottom: 0;
+                max-width: none;
                 width: calc(370px + (149 * ((100vw - 768px) / 672)));
                 aspect-ratio: 1.138;
             }
