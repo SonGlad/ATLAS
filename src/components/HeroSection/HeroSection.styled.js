@@ -27,6 +27,10 @@ export const StyledHero = styled.div`
         margin-left: auto;
         border-radius: 5px;
         overflow: hidden;
+        transform: translateY(25%);
+        opacity: 0;
+        transition: transform 1s ease 1s,
+                    opacity 1s ease 1s;
 
         @media screen and (min-width: 768px){
             border-radius: 10px;
@@ -43,6 +47,11 @@ export const StyledHero = styled.div`
         }
     }
 
+    .active-hero-cont{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
     .hero-button{
         background-color: ${p => p.theme.color.black};
         color: ${p => p.theme.color.white};
@@ -53,7 +62,11 @@ export const StyledHero = styled.div`
         font-family: "Italiana", sans-serif; 
         font-weight: 400;
         font-size: 20px;
-        transition: background-color ${p => p.theme.transition.main_transition};
+        transform: translateY(50%);
+        opacity: 0;
+        transition: background-color ${p => p.theme.transition.main_transition},
+                    transform 1s ease 1500ms,
+                    opacity 1s ease 1500ms;
 
         &:hover{
             background-color: ${p => p.theme.color.hover_grey};
@@ -69,6 +82,11 @@ export const StyledHero = styled.div`
         }
     }
 
+    .active-hero-btn{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
     .hero-text-cont{
         position: absolute;
         top: 24px;
@@ -82,10 +100,19 @@ export const StyledHero = styled.div`
         font-size: 48px;
         color: ${p => p.theme.color.black};
         margin-bottom: 32px;
+        transform: translateY(50%);
+        opacity: 0;
+        transition: transform 1s ease,
+                    opacity 1s ease;
 
         @media screen and (min-width: 768px){
             font-size: min(calc(48px + (43 * ((100vw - 768px) / 672))), 200px);
         }
+    }
+
+    .active-hero-title{
+        opacity: 1;
+        transform: translateX(0%);
     }
 
 
@@ -96,10 +123,19 @@ export const StyledHero = styled.div`
         line-height: 150%;
         color: ${p => p.theme.color.black};
         max-width: 310px;
+        transform: translateY(50%);
+        opacity: 0;
+        transition: transform 1s ease 500ms,
+                    opacity 1s ease 500ms;
 
         @media screen and (min-width: 768px){
             font-size: min(calc(12px + (11 * ((100vw - 768px) / 672))), 50px);
             max-width: calc(280px + (225 * ((100vw - 768px) / 672)));
         }
+    }
+
+    .active-hero-text{
+        opacity: 1;
+        transform: translateX(0%);
     }
 `

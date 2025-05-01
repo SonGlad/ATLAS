@@ -10,7 +10,7 @@ import { useState } from "react";
 import { NavList } from "./NavList/NavList";
 
 
-export const Header = () => {
+export const Header = ({i18n, setLangValue, langToShow, langArray}) => {
     const { renderMob } = useWindowSize();
     const [isMobMenuActive, setMobMenuActive] = useState(false);
 
@@ -34,7 +34,12 @@ export const Header = () => {
         <StyledHeader>
             <Container>
                 <div className="header-mobile">
-                    <LangButton/>
+                    <LangButton
+                        langArray={langArray}
+                        setLangValue={setLangValue}
+                        langToShow={langToShow}
+                        i18n={i18n}
+                    />
                     {renderMob ? (
                         <>
                             <ScrollIntoView className="mob-logo-item" selector="#HeroSection">

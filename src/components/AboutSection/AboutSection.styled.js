@@ -20,6 +20,10 @@ export const StyledAbout = styled.div`
             border-radius: 5px;
             overflow: hidden;
             margin-bottom: 64px;
+            transform: translateY(50%);
+            opacity: 0;
+            transition: transform 1s ease,
+                        opacity 1s ease;
 
             @media screen and (min-width: 768px){
                 margin-bottom: 0;   
@@ -36,10 +40,16 @@ export const StyledAbout = styled.div`
             }
         }
 
+        & .active-about-image-cont{
+            opacity: 1;
+            transform: translateX(0%);
+        }
+
 
 
 
         & .about-text-cont{
+
 
             @media screen and (min-width: 768px){
                 margin-top: auto;
@@ -60,20 +70,38 @@ export const StyledAbout = styled.div`
                 text-transform: lowercase;
                 font-size: 14px;
                 margin-bottom: 18px;
+                transform: translateY(50%);
+                opacity: 0;
+                transition: transform 1s ease 500ms,
+                            opacity 1s ease 500ms;
 
                 @media screen and (min-width: 768px){
                     font-size: calc(14px + (6 * ((100vw - 768px) / 672)));
                 }
             }
 
+            
+            .active-about-text-above{
+                opacity: 1;
+                transform: translateX(0%);
+            }
+
 
             .about-text-lower{
                 font-size: 15px;
+                transform: translateY(50%);
+                opacity: 0;
+                transition: transform 1s ease 1s,
+                            opacity 1s ease 1s;
 
                 @media screen and (min-width: 768px){
                     font-size: calc(15px + (8 * ((100vw - 768px) / 672)));  
-                    
                 }
+            }
+
+            .active-about-text-lower{
+                opacity: 1;
+                transform: translateX(0%);
             }
         }
     }

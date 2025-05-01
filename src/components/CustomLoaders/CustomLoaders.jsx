@@ -1,4 +1,4 @@
-import RingLoader from "react-spinners/RingLoader";
+import PuffLoader from "react-spinners/PuffLoader";
 import { RingLoaderStyled } from "./CustomLoaders.styled";
 
 
@@ -6,10 +6,10 @@ import { RingLoaderStyled } from "./CustomLoaders.styled";
 export const Loader = () => {
     return (
         <RingLoaderStyled>
-            <RingLoader 
-                color={"#36d7b7"} 
+            <PuffLoader 
+                color={"#877356"} 
                 loading = {true} 
-                size={150}
+                size={250}
                 speedMultiplier={1}
                 aria-label="Loading Spinner"
                 data-testid="loader" 

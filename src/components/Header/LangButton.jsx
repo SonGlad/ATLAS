@@ -1,16 +1,9 @@
 import { useState, useRef, useCallback, useEffect } from "react";
-import { useTranslation } from 'react-i18next';
 
 
-
-export const LangButton = () => {
+export const LangButton = ({i18n, setLangValue, langToShow, langArray}) => {
     const langButton = useRef(null);
     const [isLangMenu, setLangMenu] = useState(false);
-    const { i18n } = useTranslation();
-    const savedLang = localStorage.getItem('language');
-    const initialLang = savedLang || i18n.language.split('-')[0].toUpperCase();
-    const [langValue, setLangValue] = useState(initialLang);
-    const [langToShow, setLangToShow] = useState(initialLang);
 
 
     const toggleLangMenuOpen = () => {
@@ -48,28 +41,11 @@ export const LangButton = () => {
     },[handleKeyPress, onBackdropClick]);
 
 
-    const langArray = [
-        {'lang': 'RO'},
-        {'lang': 'EN'},
-        {'lang': 'UA'},
-        {'lang': 'RU'},
-    ];
-
     const choseLang = (lang) => {
         i18n.changeLanguage(lang.toLowerCase());
         setLangValue(lang);
         setLangMenu(false);
     };
-
-    useEffect(() => {
-        localStorage.setItem('language', langValue);
-        i18n.changeLanguage(langValue.toLowerCase());
-    },[i18n, langValue]);
-
-    useEffect(() => {
-        const languageCode = langValue.split('-')[0];
-        setLangToShow(languageCode);
-    },[langValue]);
 
 
     return(
@@ -85,7 +61,7 @@ export const LangButton = () => {
                 {langToShow}
             </button>        
             <ul className={`lang-drop-list ${toggleLangMenu()}`}>
-                {langArray.filter(({ lang }) => lang !== langToShow).map(({lang}, index) => (
+                {langArray && langArray.filter(({ lang }) => lang !== langToShow).map(({lang}, index) => (
                     <li key={index} className="lang-drop-item" onClick={() => choseLang(lang)}>
                         <p>{lang}</p>
                     </li>

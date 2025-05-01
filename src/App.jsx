@@ -8,12 +8,17 @@ import { Equipment } from "./components/EquipmentSection/EquipmentSection";
 import { Contacts } from "./components/ContactsSection/ContactSection";
 import { Footer } from "./components/Footer/Footer";
 import { Modal } from "./components/Modal/Modal";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 
 export const App= () => {
   const [isModal, setModal] = useState(false);
+  const { i18n } = useTranslation();
+  const savedLang = localStorage.getItem('language');
+  const initialLang = savedLang || i18n.language.split('-')[0].toUpperCase();
+  const [langValue, setLangValue] = useState(initialLang);
+  const [langToShow, setLangToShow] = useState(initialLang);
 
   const openModal = () => {
     setModal(true)
@@ -23,9 +28,34 @@ export const App= () => {
     setModal(false);
   }
 
+  const langArray = [
+    {'lang': 'RO'},
+    {'lang': 'EN'},
+    {'lang': 'UA'},
+    {'lang': 'RU'},
+  ];
+  
+
+  useEffect(() => {
+      localStorage.setItem('language', langValue);
+      i18n.changeLanguage(langValue.toLowerCase());
+  },[i18n, langValue]);
+
+
+  useEffect(() => {
+      const languageCode = langValue.split('-')[0];
+      setLangToShow(languageCode);
+  },[langValue]);
+
+
   return (
     <>
-      <Header/>
+      <Header
+        langArray={langArray}
+        setLangValue={setLangValue}
+        langToShow={langToShow}
+        i18n={i18n}
+      />
       <Section>
         <Container>
           <Hero 

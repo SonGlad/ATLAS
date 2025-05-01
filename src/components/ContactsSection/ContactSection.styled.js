@@ -19,7 +19,7 @@ export const StyledContacts = styled.div`
         }
 
 
-        & .google-map-cont{
+        .google-map-cont{
             width: calc(318px + (54 * ((100vw - 350px) / 52)));
             max-width: 370px;
             aspect-ratio: 1.135;
@@ -27,6 +27,10 @@ export const StyledContacts = styled.div`
             border: 1px solid black;
             overflow: hidden;
             margin-bottom: 32px;
+            transform: translateY(50%);
+            opacity: 0;
+            transition: transform 1s ease,
+                        opacity 1s ease;
 
             @media screen and (min-width: 768px){
                 margin-bottom: 0;
@@ -34,6 +38,11 @@ export const StyledContacts = styled.div`
                 width: calc(370px + (149 * ((100vw - 768px) / 672)));
                 aspect-ratio: 1.138;
             }
+        }
+
+        .active-google-map-cont{
+            opacity: 1;
+            transform: translateX(0%);
         }
 
 
@@ -66,9 +75,30 @@ export const StyledContacts = styled.div`
                      color: ${p => p.theme.color.hover_grey}
                     }
                 }
+            }
 
+            & .active-adress-item{
+                opacity: 0;
+                visibility: hidden;
+                animation: slideLinkTop 0.9s ease forwards;
+                animation-delay: calc(0.25s + 0.3s * var(--i));
             }
 
         }
     }
+
+
+    @keyframes slideLinkTop {
+        0%{
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(75px);
+        }
+        100%{
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
 `

@@ -34,6 +34,9 @@ export const StyledEquipment = styled.div`
             align-items: center;
             justify-content: center;
             gap: 20px;
+            transform-style: preserve-3d;
+            transform: perspective(100rem);
+            cursor: pointer;
 
             @media screen and (min-width: 768px){
                 flex-direction: row;
@@ -45,15 +48,44 @@ export const StyledEquipment = styled.div`
             }
         }
 
+        & .active-equipment-item{
+            opacity: 0;
+            visibility: hidden;
+            animation: slideLinkTop 0.9s ease forwards;
+            animation-delay: calc(0.3s * var(--i));
+        }
+
+    }
+
+    @keyframes slideLinkTop {
+        0%{
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(75px);
+        }
+        100%{
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0px);
+        }
     }
 
 
     .equipment-img-cont{
+        --rX: 0;
+        --rY: 0;
+        --bX: 50%;
+        --bY: 80%;
+
         overflow: hidden;
         border-radius: 5px;
         border: 1px solid ${p => p.theme.color.black};
         width: 177px;
         height: 190px;
+        position: relative;
+        transform: rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+        background-position: var(--bX) var(--bY);
+        transition: transform .6s 1s;
  
 
         @media screen and (min-width: 768px){
@@ -67,11 +99,14 @@ export const StyledEquipment = styled.div`
             height: auto;
             transform: scale(1.015);
 
-
             @media screen and (min-width: 768px){
                 width: calc(177px + (125 * ((100vw - 768px) / 672)));  
                 aspect-ratio: 0.9235;
             }
         }
+    }
+
+    .container--active {
+        transition: none;
     }
 `
