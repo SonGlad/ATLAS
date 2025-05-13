@@ -24,7 +24,9 @@
     "locations": {
         "title": "ЛОКАЦИИ",
         "location1": "КАМЕННАЯ СТЕНА",
-        "location2": "ДРУГАЯ МЕЧТА"
+        "location2": "ДРУГАЯ МЕЧТА",
+        "founder": "Дарья Морозова",
+        "back": "Назад"
     },
     "equipment": {
         "title": "ОБОРУДОВАНИЕ"

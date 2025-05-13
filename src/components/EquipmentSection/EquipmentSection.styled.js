@@ -37,6 +37,8 @@ export const StyledEquipment = styled.div`
             transform-style: preserve-3d;
             transform: perspective(100rem);
             cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
 
             @media screen and (min-width: 768px){
                 flex-direction: row;

@@ -58,4 +58,21 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         cursor: pointer;
     }
+
+    
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    canvas {
+        opacity: 0;
+        touch-action: none;
+        animation: fade-in 5s ease 1s forwards;
+    }
+
 `;

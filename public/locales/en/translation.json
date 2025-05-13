@@ -24,7 +24,9 @@
     "locations":{
         "title": "LOCATIONS",
         "location1": "STONE WALL",
-        "location2": "ANOTHER DREAM"
+        "location2": "ANOTHER DREAM",
+        "founder": "Daria Morozova",
+        "back": "Back"
     },
     "equipment":{
         "title": "EQUIPMEMT"

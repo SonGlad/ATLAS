@@ -15,10 +15,12 @@ function useWindowSize() {
         };
     }, []);
 
-    const renderTab = windowWidth < 1280;
+    const renderTab = windowWidth < 1440 && windowWidth >= 768;
     const renderMob = windowWidth < 768;
+    const renderPC = windowWidth >= 1440 & windowWidth < 1920;
+    const renderFHD = windowWidth >= 1920;
 
-    return { renderTab, renderMob, windowWidth };
+    return { renderTab, renderMob, windowWidth, renderPC, renderFHD };
 };
   
 export default useWindowSize;

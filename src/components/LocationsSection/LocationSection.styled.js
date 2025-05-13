@@ -64,4 +64,21 @@ export const StyledLocations = styled.div`
             transform: translateX(0%);
         }
     }
+
+    
+    #locations{
+        position: relative;
+        width: 100%;
+        height: 1200px;
+        border-radius: 10px;
+        overflow: hidden;
+        max-width: 402px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media screen and (min-width:768px){
+            max-width: none;
+            height: calc(500px + (200 * ((100vw - 768px) / 672)));
+        }
+    }
 `

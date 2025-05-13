@@ -24,7 +24,9 @@
     "locations": {
         "title": "LOCAȚII",
         "location1": "PERETE DE PIATRĂ",
-        "location2": "UN ALT VIS"
+        "location2": "UN ALT VIS",
+        "founder": "Daria Morozova",
+        "back": "Înapoi"
     },
     "equipment": {
         "title": "ECHIPAMENT"
