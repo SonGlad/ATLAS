@@ -9,14 +9,13 @@ import { SectionTitle } from "../SectionTitle/SectionTitle";
 import { useInView } from 'react-intersection-observer';
 import { PanoramaViever } from "./PanoramaViever";
 import { useRoute, useLocation } from 'wouter';
-import { useEffect } from "react";
 
 
 
 export const Locations = ({propsId}) => {
     const { t } = useTranslation();
     const [, params] = useRoute('/item/:id')
-    const [location, setLocation] = useLocation()
+    const [, setLocation] = useLocation();
     const { renderMob } = useWindowSize(); 
     const [titleItem, titleItem1InView] = useInView({ 
         triggerOnce: true, 
@@ -30,14 +29,6 @@ export const Locations = ({propsId}) => {
         triggerOnce: true, 
         threshold: 0.1,
     }); 
-
-
-    useEffect(() => {
-        if (location !== '/') {
-            setLocation('/');
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[]);
 
 
     return(

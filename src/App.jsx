@@ -10,6 +10,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Modal } from "./components/Modal/Modal";
 import { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'wouter';
 
 
 export const App= () => {
@@ -19,6 +20,8 @@ export const App= () => {
   const initialLang = savedLang || i18n.language.split('-')[0].toUpperCase();
   const [langValue, setLangValue] = useState(initialLang);
   const [langToShow, setLangToShow] = useState(initialLang);
+  const [location, setLocation] = useLocation();
+  
 
 
   const openModal = () => {
@@ -35,6 +38,14 @@ export const App= () => {
     {'lang': 'UA'},
     {'lang': 'RU'},
   ];
+
+  useEffect(() => {
+    if (location !== '/') {
+      setLocation('/');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
+  
 
   useEffect(() => {
     switch(langValue){
