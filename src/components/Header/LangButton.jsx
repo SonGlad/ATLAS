@@ -1,9 +1,13 @@
 import { useState, useRef, useCallback, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 
-export const LangButton = ({i18n, setLangValue, langToShow, langArray}) => {
+
+export const LangButton = ({setLangValue, langToShow, langArray}) => {
     const langButton = useRef(null);
     const [isLangMenu, setLangMenu] = useState(false);
+    const { i18n } = useTranslation();
+
 
 
     const toggleLangMenuOpen = () => {

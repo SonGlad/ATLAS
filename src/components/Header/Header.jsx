@@ -10,7 +10,7 @@ import { useState } from "react";
 import { NavList } from "./NavList/NavList";
 
 
-export const Header = ({i18n, setLangValue, langToShow, langArray}) => {
+export const Header = ({setLangValue, langToShow, langArray}) => {
     const { renderMob } = useWindowSize();
     const [isMobMenuActive, setMobMenuActive] = useState(false);
 
@@ -38,7 +38,6 @@ export const Header = ({i18n, setLangValue, langToShow, langArray}) => {
                         langArray={langArray}
                         setLangValue={setLangValue}
                         langToShow={langToShow}
-                        i18n={i18n}
                     />
                     {renderMob ? (
                         <>

@@ -11,12 +11,12 @@ i18next
     .use(initReactI18next)
     .init({
         default: 'ro',
-        debug: true,
+        debug: false,
         defaultNS: 'translation',
         fallbackLng: 'en',
         // lng: 'ro',
         backend: {
-            loadPath: '/ATLAS/locales/{{lng}}/translation.json'
+            loadPath: '/locales/{{lng}}/translation.json'
         },
         react: {
             useSuspense: true

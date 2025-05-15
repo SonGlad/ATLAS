@@ -4,18 +4,27 @@ import svgr from "vite-plugin-svgr";
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+
 // Получаем `__dirname` в ESM-формате
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const ReactCompilerConfig = {target: '19'};
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), 
+  plugins: [
+      react({
+      babel: {
+        plugins: [
+          ["babel-plugin-react-compiler", ReactCompilerConfig],
+        ],
+      },
+    }), 
     svgr({
       include: "**/*.svg",
     }),
   ],
-  base: '/ATLAS/',
+  base: '/',
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {

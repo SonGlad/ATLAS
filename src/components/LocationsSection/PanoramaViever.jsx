@@ -6,11 +6,10 @@ import { useRoute, useLocation } from 'wouter';
 import { easing, geometry } from 'maath';
 import { useTranslation } from 'react-i18next';
 import useWindowSize from "../../custom-hooks/hooks";
-
+import Fonts from "/fonts/Italiana-Regular.ttf";
 
 
 extend(geometry);
-
 
 
 export const PanoramaViever = () => {
@@ -22,24 +21,26 @@ export const PanoramaViever = () => {
   const [fovCameram, setFovCamera] = useState();
   const [frameWidth, setFrameWidth] = useState();
   const [frameHeight, setFrameHeight] = useState();
-  const { renderMob, renderTab, renderPC } = useWindowSize();
-  
+  const {renderTab, renderPC } = useWindowSize();
+  const [nameOne, setNameOne] = useState();
+  const [nameTwo, setNameTwo] = useState();
+  const [author, setAuthor] = useState();
 
+  
   // позиционирование камеры перед входом в портал. Чем выше значение тем дальше располложена камера;
   // Position & rotation - расположение картинок и порталов в пространстве по осям (x, y, z);
   // Ширина и высота - для определения самой картинки перед входом в портал;
 
 
   useEffect(() => {
-    if (renderMob) {
-      setPositionOne([0, 0.67, 0.6]);
-      setPositionTwo([0, -0.67, 0.6]);
-      setRotationOne([0, 0, 0]);
-      setRotationTwo([0, 0, 0]);
-      setFovCamera(85);
-      setFrameWidth(0.78);
-      setFrameHeight(1.2);
-    } else if(renderTab){
+    setNameOne(t('locations.location1'));
+    setNameTwo(t('locations.location2'));
+    setAuthor(t('locations.founder'));
+  },[t]);
+
+
+  useEffect(() => {
+    if(renderTab){
       setPositionOne([-0.65, 0, 0.6]);
       setPositionTwo([0.65, 0, 0.6]);
       setRotationOne([0, 0.2, 0]);
@@ -64,7 +65,8 @@ export const PanoramaViever = () => {
       setFrameWidth(1.25);
       setFrameHeight(1.8);
     }
-  },[renderMob, renderPC, renderTab])
+  },[renderPC, renderTab]);
+
 
   // Параметры выставлены на разрешение мобильного приложения, свыше 768, 1440 и 1920px;
 
@@ -75,8 +77,8 @@ export const PanoramaViever = () => {
         <Suspense fallback={null}>
             <Frame
                 id="01"
-                name={t('locations.location1')}
-                author={t('locations.founder')}
+                name={nameOne}
+                author={author}
                 image="panoramaOne.jpg"
                 bg="#000000"
                 position={positionOne}
@@ -86,8 +88,8 @@ export const PanoramaViever = () => {
             />
             <Frame
                 id="02"
-                name={t('locations.location2')}
-                author={t('locations.founder')}
+                name={nameTwo}
+                author={author}
                 image="panoramaTwo.jpg"
                 bg="#000000"
                 position={positionTwo}
@@ -114,7 +116,7 @@ function Frame({ id, name, author, image, bg, width, height, ...props }) {
   const [fonrSizeTwo, setFontSizeTwo] = useState();
   const [textPositionOne, setTextPositionOne] = useState();
   const [textPositionTwo, setTextPositionTwo] = useState();
-  const { renderMob, renderTab, renderPC } = useWindowSize();
+  const {renderTab, renderPC } = useWindowSize();
 
 
   useFrame((_, dt) => {
@@ -123,12 +125,7 @@ function Frame({ id, name, author, image, bg, width, height, ...props }) {
 
 
   useEffect(() => {
-    if (renderMob) {
-      setFontSizeOne(0.08);
-      setFontSizeTwo(0.04);
-      setTextPositionOne([0, 0.52, 0.025]);
-      setTextPositionTwo([0, -0.55, 0.025]);
-    } else if(renderTab){
+    if(renderTab){
       setFontSizeOne(0.10);
       setFontSizeTwo(0.05);
       setTextPositionOne([0, 0.75, 0.025]);
@@ -144,14 +141,13 @@ function Frame({ id, name, author, image, bg, width, height, ...props }) {
       setTextPositionOne([0, 0.75, 0.025]);
       setTextPositionTwo([-0.15, -0.8, 0.025]);
     }
-  },[renderMob, renderPC, renderTab])
-
+  },[renderPC, renderTab]);
 
 
   return (
     <group {...props}>
       <Text
-        font='Italiana-Regular.ttf'
+        font={Fonts}
         fontSize={fonrSizeOne}
         fontWeight={400}
         anchorY="top"
@@ -166,7 +162,7 @@ function Frame({ id, name, author, image, bg, width, height, ...props }) {
         {name}
       </Text>
       <Text
-        font='Italiana-Regular.ttf'
+        font={Fonts}
         fontSize={fonrSizeTwo}
         anchorY="bottom"
         anchorX="right"
@@ -214,23 +210,23 @@ function Panorama({ image }) {
 
 
 function Rig({ position = new THREE.Vector3(0, 0, 2), focus = new THREE.Vector3(0, 0, 0) }) {
-  const { controls, scene } = useThree()
-  const [, params] = useRoute('/item/:id')
+  const { controls, scene } = useThree();
+  const [, params] = useRoute('/item/:id');
 
   useEffect(() => {
-  const active = scene.getObjectByName(params?.id)
+  const active = scene.getObjectByName(params?.id);
   
   if (active) {
     active.parent.localToWorld(position.set(0, 0.5, 0.25));
     if (active.name === "01") {
-      active.parent.localToWorld(focus.set(0, 0, -2))
+      active.parent.localToWorld(focus.set(0, 0, -2));
     } else {
-      active.parent.localToWorld(focus.set(0, 0, 2))
+      active.parent.localToWorld(focus.set(0, 0, 2));
     }
 
   }
     controls?.setLookAt(...position.toArray(), ...focus.toArray(), true)
-  }, [controls, focus, params?.id, position, scene])
+  }, [controls, focus, params?.id, position, scene]);
 
   return <CameraControls 
     // makeDefault
@@ -247,7 +243,7 @@ function Rig({ position = new THREE.Vector3(0, 0, 2), focus = new THREE.Vector3(
     // dragToOffset={false}
     // dollyToCursor={true}
     dollySpeed={false}
-    enablePan={false}
+    enablePan={true}
     makeDefault 
     minPolarAngle={Math.PI / 2 - 0.4}
     maxPolarAngle={Math.PI / 2 + 0.5}

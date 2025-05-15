@@ -20,6 +20,7 @@ export const App= () => {
   const [langValue, setLangValue] = useState(initialLang);
   const [langToShow, setLangToShow] = useState(initialLang);
 
+
   const openModal = () => {
     setModal(true)
   };
@@ -34,18 +35,39 @@ export const App= () => {
     {'lang': 'UA'},
     {'lang': 'RU'},
   ];
+
+  useEffect(() => {
+    switch(langValue){
+      case "EN":
+        document.documentElement.lang = 'en'
+        break;
+      case "RO":
+        document.documentElement.lang = 'ro'
+        break;
+      case "UA":
+        document.documentElement.lang = 'uk'
+        break;
+      case "RU":
+        document.documentElement.lang = 'ru'
+        break;
+      default:
+        document.documentElement.lang = 'ro'
+    }
+  },[langValue])
   
 
   useEffect(() => {
-      localStorage.setItem('language', langValue);
-      i18n.changeLanguage(langValue.toLowerCase());
+    localStorage.setItem('language', langValue);
+    i18n.changeLanguage(langValue.toLowerCase());
   },[i18n, langValue]);
 
 
   useEffect(() => {
-      const languageCode = langValue.split('-')[0];
-      setLangToShow(languageCode);
+    const languageCode = langValue.split('-')[0];
+    setLangToShow(languageCode);
   },[langValue]);
+
+
 
 
   return (
@@ -54,7 +76,6 @@ export const App= () => {
         langArray={langArray}
         setLangValue={setLangValue}
         langToShow={langToShow}
-        i18n={i18n}
       />
       <Section>
         <Container>
