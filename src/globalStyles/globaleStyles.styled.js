@@ -59,20 +59,19 @@ export const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
 
-    
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-
     canvas {
         opacity: 0;
         touch-action: none;
-        animation: fade-in 5s ease 1s forwards;
+        animation: fade-in 5s ease 2s forwards;
+    }
+    
+    @keyframes fade-in {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
     }
 
 `;
