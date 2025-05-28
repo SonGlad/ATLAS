@@ -79,8 +79,8 @@ export const PanoramaViever = () => {
                 id="01"
                 name={nameOne}
                 author={author}
-                image="panoramaOne.jpg"
-                bg="#000000"
+                image="stoneWall.webp"
+                bg="#747266"
                 position={positionOne}
                 rotation={rotationOne}
                 width={frameWidth}
@@ -90,8 +90,8 @@ export const PanoramaViever = () => {
                 id="02"
                 name={nameTwo}
                 author={author}
-                image="panoramaTwo.jpg"
-                bg="#000000"
+                image="anotherDream.webp"
+                bg="#876b55"
                 position={positionTwo}
                 rotation={rotationTwo}
                 width={frameWidth}
@@ -201,7 +201,8 @@ function Panorama({ image }) {
   
   return (
     <mesh scale={[-1, 1, 1]}>
-      <sphereGeometry args={[15, 100, 100]} />
+      <cylinderGeometry args={[7, 7, 15, 50, 50, true, 1, 4. ]}/>
+      {/* <sphereGeometry args={[10, 100, 100]} /> */}
       <meshBasicMaterial map={texture} side={THREE.BackSide} />
     </mesh>
   )
@@ -221,7 +222,7 @@ function Rig({ position = new THREE.Vector3(0, 0, 2), focus = new THREE.Vector3(
     if (active.name === "01") {
       active.parent.localToWorld(focus.set(0, 0, -2));
     } else {
-      active.parent.localToWorld(focus.set(0, 0, 2));
+      active.parent.localToWorld(focus.set(-1, 0.4, -2));
     }
 
   }
@@ -229,25 +230,12 @@ function Rig({ position = new THREE.Vector3(0, 0, 2), focus = new THREE.Vector3(
   }, [controls, focus, params?.id, position, scene]);
 
   return <CameraControls 
-    // makeDefault
-    // minPolarAngle={Math.PI / 2}     // Ограничение вертикального вращения (вверх)
-    // maxPolarAngle={Math.PI / 2.2}   // Ограничение вертикального вращения (вниз)
-    // minAzimuthAngle={-Math.PI / 4}  // Ограничение горизонтального вращения влево
-    // maxAzimuthAngle={Math.PI / 4}   // Ограничение горизонтального вращения вправо
-    // minDistance={1}                 // Минимальный зум
-    // maxDistance={5}                 // Максимальный зум
-    // enableZoom={false}               // Включен ли зум
-    // minPolarAngle={0} 
-    // maxPolarAngle={Math.PI} 
-    // mouseButtons={{ wheel: 0 }}
-    // dragToOffset={false}
-    // dollyToCursor={true}
     dollySpeed={false}
-    enablePan={true}
+    enablePan={false}
     makeDefault 
-    minPolarAngle={Math.PI / 2 - 0.4}
-    maxPolarAngle={Math.PI / 2 + 0.5}
-    minAzimuthAngle={-Math.PI / 10}
-    maxAzimuthAngle={Math.PI / 2 * 2} 
+    minPolarAngle={Math.PI / 2 - 0.35}
+    maxPolarAngle={Math.PI / 2 + 0.35}
+    minAzimuthAngle={-Math.PI / 6.5}
+    maxAzimuthAngle={Math.PI / 3.8} 
   />
 };
