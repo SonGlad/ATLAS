@@ -14,7 +14,7 @@ import { useRoute, useLocation } from 'wouter';
 
 export const Locations = ({propsId}) => {
     const { t } = useTranslation();
-    const [, params] = useRoute('/item/:id')
+    const [, params] = useRoute('/location/:id')
     const [, setLocation] = useLocation();
     const { renderMob } = useWindowSize(); 
     const [titleItem, titleItem1InView] = useInView({ 

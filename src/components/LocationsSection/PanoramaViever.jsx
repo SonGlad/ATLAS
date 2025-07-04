@@ -76,7 +76,7 @@ export const PanoramaViever = () => {
         <color attach="background" args={['#fff']} />
         <Suspense fallback={null}>
             <Frame
-                id="01"
+                id="StoneWall"
                 name={nameOne}
                 author={author}
                 image="stoneWall.webp"
@@ -87,7 +87,7 @@ export const PanoramaViever = () => {
                 height={frameHeight}
             />
             <Frame
-                id="02"
+                id="AnotherDream"
                 name={nameTwo}
                 author={author}
                 image="anotherDream.webp"
@@ -109,7 +109,7 @@ export const PanoramaViever = () => {
 function Frame({ id, name, author, image, bg, width, height, ...props }) {
   const portal = useRef()
   const [, setLocation] = useLocation();
-  const [, params] = useRoute('/item/:id');
+  const [, params] = useRoute('/location/:id');
   const [hovered, hover] = useState(false);
   useCursor(hovered);
   const [fonrSizeOne, setFontSizeOne] = useState();
@@ -176,7 +176,7 @@ function Frame({ id, name, author, image, bg, width, height, ...props }) {
       </Text>
         <mesh
             name={id}
-            onClick={(e) => (e.stopPropagation(), setLocation('/item/' + e.object.name))}
+            onClick={(e) => (e.stopPropagation(), setLocation('/location/' + e.object.name))}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
         >
@@ -212,7 +212,7 @@ function Panorama({ image }) {
 
 function Rig({ position = new THREE.Vector3(0, 0, 2), focus = new THREE.Vector3(0, 0, 0) }) {
   const { controls, scene } = useThree();
-  const [, params] = useRoute('/item/:id');
+  const [, params] = useRoute('/location/:id');
 
   useEffect(() => {
   const active = scene.getObjectByName(params?.id);
